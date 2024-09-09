@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+templates/draft.html
+draft.py
+enunciado.pdf
+flask-feedback-solution/
+FLASK-FEEDBACK-FINISHED WITH NOTES/

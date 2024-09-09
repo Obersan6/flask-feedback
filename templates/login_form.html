@@ -1,0 +1,34 @@
+<!-- Form for user login with WTforms-->
+
+{% extends 'base.html' %}
+{% block title %}login{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="display-1 text-center">Sign in</h1>
+        <div class="col-md-8">
+            <form method="POST">
+                <!-- Include the hidden tag -->
+                {{ form.hidden_tag() }}
+
+                <!-- Iterate over the form to create the form template -->
+                {% for field in form %}
+                    {% if field.widget.input_type != 'hidden' %}
+                    <!-- Fields -->
+                    <div class="form-group">
+                        {{ field.label(class="form-label") }}
+                        <!-- Display input fields -->
+                        {{ field(class="form-control") }}
+
+                        {% for error in field.errors %}
+                            <div class="text-danger">{{ error }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                {% endfor %}   
+                <button type="submit" class="btn btn-success btn-lg">Sign in</button>             
+            </form>
+        </div>
+    </div>
+{% endblock %}

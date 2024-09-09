@@ -1,0 +1,12 @@
+<!-- Logout button -->
+
+{% extends 'base.html' %}
+{% block title %}logout{% endblock %}
+
+{% block content %}
+    <!-- Hidden form to handle POST request -->
+    <form action="/logout" method="POST">
+        {{ form.hidden_tag() }} 
+        <button type="submit" class="btn-link">Logout</button>
+    </form>
+{% endblock %}
